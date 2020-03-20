@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moran\\source\\repos\\MySQL_DDL\\MySQL_DDL.csproj": {}
+    "C:\\Users\\moran\\Documents\\GitHub\\DDL_Proyecto_ADB\\MySQL_DDL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moran\\source\\repos\\MySQL_DDL\\MySQL_DDL.csproj": {
+    "C:\\Users\\moran\\Documents\\GitHub\\DDL_Proyecto_ADB\\MySQL_DDL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moran\\source\\repos\\MySQL_DDL\\MySQL_DDL.csproj",
+        "projectUniqueName": "C:\\Users\\moran\\Documents\\GitHub\\DDL_Proyecto_ADB\\MySQL_DDL.csproj",
         "projectName": "MySQL_DDL",
-        "projectPath": "C:\\Users\\moran\\source\\repos\\MySQL_DDL\\MySQL_DDL.csproj",
+        "projectPath": "C:\\Users\\moran\\Documents\\GitHub\\DDL_Proyecto_ADB\\MySQL_DDL.csproj",
         "packagesPath": "C:\\Users\\moran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moran\\source\\repos\\MySQL_DDL\\obj\\",
+        "outputPath": "C:\\Users\\moran\\Documents\\GitHub\\DDL_Proyecto_ADB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

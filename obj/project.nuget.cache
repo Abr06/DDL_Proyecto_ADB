@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0bw4EU83h+z/nIMKKTeF0Jyk3t/KXIIbPOwlByK3elgmj2+4pwou3M00QcjUY7yKEkq5cJBNnzUNTZphXF9qLg==",
+  "dgSpecHash": "Hdj4fYjZxGMtQIZXHy85bnJF+SUfd1OZ9K+5UXBInMHAPJdi2n0vogDqlIQOj3nTI7reGC4yNE0+VkrszotxAg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\moran\\source\\repos\\MySQL_DDL\\MySQL_DDL.csproj",
+  "projectFilePath": "C:\\Users\\moran\\Documents\\GitHub\\DDL_Proyecto_ADB\\MySQL_DDL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moran\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\moran\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
