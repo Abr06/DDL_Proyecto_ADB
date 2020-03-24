@@ -11,6 +11,7 @@ namespace MySQL_DDL
         private ConexioMySQL conexioMySQL = new ConexioMySQL();
 
         MySqlCommand comando= new MySqlCommand();
+        MySqlDataReader reader;
 
         public void CrearBD(string nameBD)
         {
@@ -20,10 +21,10 @@ namespace MySQL_DDL
             //comando.Parameters.AddWithValue("@namebd",nameBD);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-            conexioMySQL.CerrarConexion();
+            comando.Connection = conexioMySQL.CerrarConexion();
         }
 
-        public void EliminiarBD(string nameBD)
+        public void BorrarBD(string nameBD)
         {
             comando.Connection = conexioMySQL.AbrirConexion();
             comando.CommandText = "drop database "+nameBD+";";
@@ -31,7 +32,33 @@ namespace MySQL_DDL
             //comando.Parameters.AddWithValue("nameBD",nameBD);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-            conexioMySQL.CerrarConexion();
+            comando.Connection = conexioMySQL.CerrarConexion();
+        }
+
+        public void UsarBD(string nameBD)
+        {
+            comando.Connection = conexioMySQL.AbrirConexion();
+            comando.CommandText = "use " + nameBD + ";";
+            comando.CommandType = CommandType.Text;
+            //comando.Parameters.AddWithValue("nameBD",nameBD);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            //conexioMySQL.CerrarConexion();
+        }
+
+        public void Mostrar()
+        {
+            comando.Connection = conexioMySQL.AbrirConexion();
+            comando.CommandText = "show databases;";
+            comando.CommandType = CommandType.Text;
+            reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine("----------------------");
+                Console.WriteLine(reader.GetString(0));
+            }
+            reader.Close();
+            comando.Connection=conexioMySQL.CerrarConexion();
         }
     }
 }

@@ -11,135 +11,142 @@ namespace MySQL_DDL
     {
         static void Main(string[] args)
         {
-            //string datos = "";
-            //string cadena = "server=localhost; port=3306; user id=root; password=rojo7913@; database=ejemplo1;";//Se crea la cadena para instanciar la base de datos
-            //MySqlConnection connection = new MySqlConnection(cadena);
-            //try
-            //{
-            //    connection.Open();
-            //    MySqlDataReader reader = null;
-            //    MySqlCommand cmd = new MySqlCommand("SHOW DATABASES", connection);//instruccion para mostrar bases de datos
-            //    reader = cmd.ExecuteReader();
-
-            //    while (reader.Read())
-            //    {
-            //        datos += reader.GetString(0) + "\n";
-            //    }
-            //}
-            //catch (MySqlException ex)
-            //{
-            //    Console.WriteLine(ex.ToString());
-            //}
-            //Console.WriteLine(datos);
-            //Console.ReadKey();
-
-            //------------------------------------------------MyConetions---------------------------------//
-            //MySqlConnection conexion;
-            //string servidor = "localhost";
-            //string puerto = "3306";
-            //string usuario = "root";
-            //string password = "rojo7913@";
-            //string database = "ejemplo1";
-
-            //string connStr =
-            //    string.Format("server={0};port={1};user id={2};password={3};database={4};pooling=false;Allow Zero Datetime=False;Convert Zero Datetime=True", servidor, puerto, usuario, password, database);
-            //try
-            //{
-            //    conexion = new MySqlConnection(connStr);
-            //    conexion.Open();
-            //    Console.WriteLine("Conectado a la base de datos [{0}]", database);
-            //    conexion.Close();
-            //    Console.WriteLine("La conexion a terminado...");
-            //}
-            //catch (MySqlException e)
-            //{
-            //    Console.WriteLine("ERROR: " + e.Message);
-            //}
-
-            //Console.WriteLine("\nPresione cualquier tecla para terminar");
-            //Console.ReadKey();
-            //----------------------------------------------------------------------------------------------//
+            //-----------------------------------------------Menu-----------------------------------------------//
             bool showMenu = true;
             while (showMenu)
             {
-                Console.WriteLine("Ingrese texto");
-                string cadena = Console.ReadLine();
-                showMenu = Inicio(cadena);
+                //Console.WriteLine("Ingrese texto");
+                //string cadena = Console.ReadLine();
+                showMenu = Inicio();
             }
             Console.ReadKey();
         }
 
-        static bool Inicio(string cadena)
+        static bool Inicio()
         {
+            Console.WriteLine("----------------------");
+            Console.WriteLine("Ingrese texto");
+            string cadena = Console.ReadLine();
+
             switch (cadena.ToLower())
             {
-                case string _ when cadena.ToLower().StartsWith("crear base de datos:"):
+                case string _ when cadena.EndsWith(";")==false:
+                    // Can have a null case.
+                    Console.WriteLine("----------------------");
+                    Console.WriteLine("Falta ; al final");
+                    return true;
+                case string _ when cadena.ToLower().StartsWith("crear base"):
                     // Can have a null case.
                     Crear(cadena);
                     return true;
-                case string _ when cadena.ToLower().StartsWith("eliminar base de datos:"):
+                case string _ when cadena.ToLower().StartsWith("borrar base"):
                     // Empty string case also works.
-                    Eliminar(cadena);
+                    Borrar(cadena);
                     return true;
-                case string _ when cadena.ToLower().StartsWith("editar base de datos:"):
+                case string _ when cadena.ToLower().StartsWith("usar base"):
                     // Empty string case also works.
-                    Editar(cadena);
+                    Usar(cadena);
+                    return true;
+                case string _ when cadena.ToLower().StartsWith("mostrar bases;"):
+                    // Empty string case also works.
+                    Mostrar();
                     return true;
                 default:
-                    Console.Clear();
+                    Console.WriteLine("----------------------");
                     Console.WriteLine("Error en comando, ingresar otra vez");
                     return true;
             }
         }
 
-        static void Eliminar(string cadena)
+        static void Borrar(string cadena)
         {
-            Console.Clear();
             Metodos_DDL metodos = new Metodos_DDL();
-            int found = cadena.IndexOf(":");
-            string nuevo = cadena.Substring(found + 1);
-            Console.WriteLine(nuevo);
+            int found = cadena.IndexOf(";");
+            cadena = cadena.Remove(found);
+
+            string nuevo = cadena.Substring(12);
             try
             {
-                metodos.EliminiarBD(nuevo);
+                metodos.BorrarBD(nuevo);
+                Console.WriteLine("----------------------");
+                Console.WriteLine("Se ha borrado la base de datos: {0}.", nuevo);
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                Console.WriteLine("Aqui se va a eliminar: {0}.", cadena.Substring(found + 1));
+                Console.WriteLine("----------------------");
+                const int MaxLength = 103;
+                string error = ex.ToString();
+                if (error.Length > MaxLength)
+                {
+                    error = error.Substring(0, MaxLength);
+                    Console.WriteLine(error);
+                }
             }
         }
         static void Crear(string cadena)
         {
-            Console.Clear();
             Metodos_DDL metodos = new Metodos_DDL();
-            int found = cadena.IndexOf(":");
-            string nuevo = cadena.Substring(found+1);
-            Console.WriteLine(nuevo);
+            int found = cadena.IndexOf(";");
+            cadena = cadena.Remove(found);
+            
+            string nuevo = cadena.Substring(11);
             try
             {
                 metodos.CrearBD(nuevo);
+                Console.WriteLine("----------------------");
+                Console.WriteLine("Se ha creado la base de datos: {0}.", nuevo);
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("----------------------");
+                const int MaxLength = 103;
+                string error = ex.ToString();
+                if (error.Length > MaxLength)
+                {
+                    error = error.Substring(0, MaxLength);
+                    Console.WriteLine(error);
+                }
+            }
+        }
+        static void Usar(string cadena)
+        {
+            Metodos_DDL metodos = new Metodos_DDL();
+            int found = cadena.IndexOf(";");
+            cadena = cadena.Remove(found);
+
+            string nuevo = cadena.Substring(10);
+            try
+            {
+                metodos.UsarBD(nuevo);
+                Console.WriteLine("----------------------");
+                Console.WriteLine("Se esta usando la base de datos: {0}.", nuevo);
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("----------------------");
+                const int MaxLength = 103;
+                string error = ex.ToString();
+                if (error.Length > MaxLength)
+                {
+                    error = error.Substring(0, MaxLength);
+                    Console.WriteLine(error);
+                }
+            }
+        }
+        static void Mostrar()
+        {
+            Metodos_DDL metodos = new Metodos_DDL();
+            try
+            {
+                Console.WriteLine("----------------------");
+                Console.WriteLine("Bases de datos:");
+                metodos.Mostrar();
+                Console.WriteLine("----------------------");
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-            finally
-            {
-                Console.WriteLine("Aqui se va a crear: {0}.", cadena.Substring(found + 1));
-            }
-        }
-        static void Editar(string cadena)
-        {
-            Console.Clear();
-
-            int found = cadena.IndexOf(":");
-            string nuevo = cadena.Substring(found + 1);
-            Console.WriteLine("Aqui se va a editar: {0}.", cadena.Substring(found + 1));
-            Console.WriteLine(nuevo);
         }
     }
 }

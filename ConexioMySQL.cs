@@ -12,14 +12,14 @@ namespace MySQL_DDL
         public MySqlConnection AbrirConexion()
         {
             //if (connection.State.ToString()=="Close")
-                connection.Open();
+            connection.Open();
             return connection;
         }
         //Metodo publico para cerrar conexion
         public MySqlConnection CerrarConexion()
         {
             //if (connection.State.ToString()=="Open")
-                connection.Close();
+            connection.Close();
             return connection;
         }
     }
