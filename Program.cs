@@ -15,8 +15,6 @@ namespace MySQL_DDL
             bool showMenu = true;
             while (showMenu)
             {
-                //Console.WriteLine("Ingrese texto");
-                //string cadena = Console.ReadLine();
                 showMenu = Inicio();
             }
             Console.ReadKey();
