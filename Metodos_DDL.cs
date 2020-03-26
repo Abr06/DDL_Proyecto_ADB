@@ -46,6 +46,17 @@ namespace MySQL_DDL
             //conexioMySQL.CerrarConexion();
         }
 
+        public void TablaCrear(string nameBD,string nameTable)
+        {
+            comando.Connection = conexioMySQL.AbrirConexion();
+            comando.CommandText = "use "+nameBD+"; create table " + nameTable +";";
+            comando.CommandType = CommandType.Text;
+            //comando.Parameters.AddWithValue("nameBD",nameBD);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            //conexioMySQL.CerrarConexion();
+        }
+
         public void Mostrar()
         {
             comando.Connection = conexioMySQL.AbrirConexion();

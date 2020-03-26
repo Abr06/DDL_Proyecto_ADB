@@ -49,10 +49,57 @@ namespace MySQL_DDL
                     // Empty string case also works.
                     Mostrar();
                     return true;
+                case string _ when cadena.ToLower().StartsWith("crear tabla"):
+                    // Empty string case also works.
+                    //TablaCrear(cadena);
+                    Console.WriteLine("Usar una base de datos primero.");
+                    return true;
                 default:
                     Console.WriteLine("----------------------");
                     Console.WriteLine("Error en comando, ingresar otra vez");
                     return true;
+            }
+        }
+
+        static void TablaCrear(string nuevo1)
+        {
+            Console.WriteLine("----------------------");
+            Console.WriteLine("Ingrese texto para tabla");
+            string cadena2 = Console.ReadLine();
+
+            switch (cadena2.ToLower())
+            {
+                case string _ when cadena2.ToLower().StartsWith("crear tabla"):
+                    // Can have a null case.
+                    Metodos_DDL metodos = new Metodos_DDL();
+                    int found = cadena2.IndexOf(";");
+                    cadena2 = cadena2.Remove(found);
+
+                    string nuevo2 = cadena2.Substring(12);
+
+                    nuevo2 = nuevo2.Replace("long", "LONG").Replace("entero", "INT").Replace("decimal", "DECIMAL").Replace("fecha", "DATE").Replace("caracter", "varchar(20)");
+                    try
+                    {
+                        metodos.TablaCrear(nuevo1,nuevo2);
+                        Console.WriteLine("----------------------");
+                        Console.WriteLine("Se ha creado la tabla: {0}.", nuevo2);
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("----------------------");
+                        const int MaxLength = 103;
+                        string error = ex.ToString();
+                        if (error.Length > MaxLength)
+                        {
+                            error = error.Substring(0, MaxLength);
+                            Console.WriteLine(error);
+                        }
+                    }
+                    break;
+                default:
+                    Console.WriteLine("----------------------");
+                    Console.WriteLine("Error en comando para table, ingresar otra vez");
+                    break;
             }
         }
 
@@ -118,6 +165,7 @@ namespace MySQL_DDL
                 metodos.UsarBD(nuevo);
                 Console.WriteLine("----------------------");
                 Console.WriteLine("Se esta usando la base de datos: {0}.", nuevo);
+                TablaCrear(nuevo);
             }
             catch (MySqlException ex)
             {
