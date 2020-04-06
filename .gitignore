@@ -8,3 +8,13 @@ obj/MySQL_DDL.csproj.nuget.dgspec.json
 obj/MySQL_DDL.csproj.nuget.g.props
 obj/project.assets.json
 obj/project.nuget.cache
+.vs/MySQL_DDL/v16/.suo
+.vs/MySQL_DDL/v16/.suo
+bin/Debug/netcoreapp3.0/MySQL_DDL.dll
+bin/Debug/netcoreapp3.0/MySQL_DDL.exe
+bin/Debug/netcoreapp3.0/MySQL_DDL.pdb
+bin/Debug/netcoreapp3.0/MySQL_DDL.runtimeconfig.dev.json
+obj/Debug/netcoreapp3.0/MySQL_DDL.csproj.FileListAbsolute.txt
+obj/Debug/netcoreapp3.0/MySQL_DDL.dll
+obj/Debug/netcoreapp3.0/MySQL_DDL.exe
+obj/Debug/netcoreapp3.0/MySQL_DDL.pdb
