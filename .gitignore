@@ -27,3 +27,4 @@ obj/Debug/netcoreapp3.0/MySQL_DDL.csprojAssemblyReference.cache
 *.cache
 *.dll
 *.pdb
+.vs/MySQL_DDL/v16/.suo
