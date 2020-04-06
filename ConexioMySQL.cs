@@ -7,7 +7,7 @@ namespace MySQL_DDL
 {
     public class ConexioMySQL
     {
-        private MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;password=******************");
+        private MySqlConnection connection = new MySqlConnection("server=localhost;user id=Abr06;password=susana24");
         //Metodo publico para abrir conexion
         public MySqlConnection AbrirConexion()
         {
