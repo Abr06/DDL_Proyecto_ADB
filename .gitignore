@@ -20,3 +20,10 @@ obj/Debug/netcoreapp3.0/MySQL_DDL.exe
 obj/Debug/netcoreapp3.0/MySQL_DDL.pdb
 .vs/MySQL_DDL/DesignTimeBuild/.dtbcache.v2
 .vs/MySQL_DDL/v16/.suo
+.vs/MySQL_DDL/v16/.suo
+bin/Debug/netcoreapp3.0/MySQL_DDL.dll
+bin/Debug/netcoreapp3.0/MySQL_DDL.pdb
+obj/Debug/netcoreapp3.0/MySQL_DDL.csprojAssemblyReference.cache
+*.cache
+*.dll
+*.pdb
