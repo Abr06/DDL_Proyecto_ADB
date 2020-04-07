@@ -24,7 +24,7 @@ namespace MySQL_DDL
 
             comando.CommandText = "create database "+nameBD+";";
             comando.CommandType = CommandType.Text;
-            //comando.Parameters.AddWithValue("@namebd",nameBD);
+            //comando.Parameters.AddWithValue("@namebd",nameBD); para que sirve
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
 
