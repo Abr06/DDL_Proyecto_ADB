@@ -13,12 +13,30 @@ namespace MySQL_DDL
         static void Main(string[] args)
         {
             //-----------------------------------------------Menu-----------------------------------------------//
+
+            //Program program = new Program();
+            //Console.WriteLine("ingresar servidor:");
+            //string nameServer = Console.ReadLine();
+            //Console.WriteLine("ingresar usuario:");
+            //string iduser = Console.ReadLine();
+            //Console.WriteLine("ingresar contraseña:");
+            //string pass = Console.ReadLine();
+
+
+            //string cadenaSQL = "server=" + nameServer + ";user id=" + iduser + ";password=" + pass;
+
+            //ConexioMySQL conexio = new ConexioMySQL();
+
+            //conexio.Conexion(cadenaSQL);
+
             bool showMenu = true;
+
             while (showMenu)
             {
                 showMenu = Inicio();
-                Console.WriteLine("Saliste del DDL.");
             }
+            Console.WriteLine("Saliste del DDL.");
+
             Console.ReadKey();
         }
         #endregion
