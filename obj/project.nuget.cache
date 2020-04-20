@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0bw4EU83h+z/nIMKKTeF0Jyk3t/KXIIbPOwlByK3elgmj2+4pwou3M00QcjUY7yKEkq5cJBNnzUNTZphXF9qLg==",
+  "dgSpecHash": "9xNQzU/4+PacKmCEV2zuG3zt0aZYllYci94ASzv79f7C3Qfr/vOXSyCFWce+3vQsDGbodmy1K3St3AlAlWmqWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\moran\\source\\repos\\MySQL_DDL\\MySQL_DDL.csproj",
+  "projectFilePath": "C:\\Users\\moran\\Documents\\GitHub\\DDL_Proyecto_ADB\\MySQL_DDL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moran\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\moran\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
@@ -99,7 +99,11 @@
     "C:\\Users\\moran\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\moran\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\moran\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\moran\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\moran\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\moran\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\moran\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\moran\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\moran\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }
