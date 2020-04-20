@@ -16,8 +16,8 @@ namespace MySQL_DDL
             do
             {
                 showMenu = usuario.Inicio();
+                Console.WriteLine("Saliste del DDL.");
             } while (showMenu);
-            Console.WriteLine("Saliste del DDL.");
         }
     }
 }
