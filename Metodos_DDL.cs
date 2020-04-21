@@ -90,7 +90,8 @@ namespace MySQL_DDL
         public void MostrarTabla(string nameBD, string nameTable)
         {
 
-            comando.CommandText = "use " + nameBD + "; SELECT COLUMN_NAME,DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '"+nameTable+"';";
+            comando.CommandText = "use " + nameBD + "; SHOW COLUMNS FROM " + nameTable + ";";///Nuevo para tablas columnas
+            //comando.CommandText = "use " + nameBD + "; SELECT COLUMN_NAME,DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '"+nameTable+"';";
             comando.CommandType = CommandType.Text;
             reader = comando.ExecuteReader();
             while (reader.Read())
